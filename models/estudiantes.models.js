@@ -13,9 +13,22 @@ const {rows} = await pool.query(text, [rut])
 return rows[0]
 }
 
+const updateEstudiantes = async (req, res) => {
+    
+    const SQLupdate = "UPDATE ESTUDIANTES SET NOMBRE = 'ESTUDIANTE 1 MODIFICADO' WHERE RUT = '111';"
+    const { rows } = await pool.query(SQLupdate, [estudiantes.nombre, estudiantes.curso, estudiantes.nivel])
+    return rows
+}
 
+const deleteOnByRut = async (rut) => {
+
+    const text = 'DELETE FROM ESTUDIANTES WHERE RUT = $1'
+    const {rows} = await pool.query(text, [rut])
+return rows[0]
+
+}
 
 export const estudiantesModel =  {
-    findAll, findOneByRut
+    findAll, findOneByRut,  updateEstudiantes, deleteOnByRut, 
 
 }

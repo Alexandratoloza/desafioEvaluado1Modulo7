@@ -29,8 +29,43 @@ const uniqueEstudiantes = async (req, res) => {
 
   }}
 
+  const updateEstudiantes = async (req, res) => {
+    try {
+        const { nombre, completed } = req.body
+        const { rut} = req.params
+        const updateEstudiantes = { rut, nombre, curso, nivel}
+        const estudiantes = await estudiantesModel.updateEstudiantes()
+        return res.json(todo)
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ ok: false })
+    }
+}
+
+
+
+  
+
+  const DeleteEstudiantes = async (req, res) => {
+  
+    try{
+      const { rut } = req.params
+  
+      const DeleteEstudiantes = await estudiantesModel.deleteOnByRut(rut)
+  
+      return res.json({DeleteEstudiantes})
+  
+    }catch(e){ 
+      console.log(e)
+      return res.status(500).json({ok: false})
+  
+    }}
+
 export const estudiantesControllers  = {
-    allEstudiantes, uniqueEstudiantes
+    allEstudiantes, 
+    uniqueEstudiantes, 
+    updateEstudiantes,
+    DeleteEstudiantes
 }
 
 
