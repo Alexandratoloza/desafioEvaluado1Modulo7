@@ -20,6 +20,6 @@ const testConection = async () => {
     }
 }
 
-
+testConection()
 
 
