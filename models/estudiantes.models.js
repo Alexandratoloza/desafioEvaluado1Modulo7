@@ -13,7 +13,7 @@ const {rows} = await pool.query(text, [rut])
 return rows[0]
 }
 
-const updateEstudiantes = async (req, res) => {
+const updateEstudiantes = async (estudiantes) => {
     
     const SQLupdate = "UPDATE ESTUDIANTES SET NOMBRE = 'ESTUDIANTE 1 MODIFICADO' WHERE RUT = '111';"
     const { rows } = await pool.query(SQLupdate, [estudiantes.nombre, estudiantes.curso, estudiantes.nivel])
