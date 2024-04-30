@@ -5,9 +5,8 @@ import { estudiantesControllers } from "../controllers/estudiantes.controllers.j
 
 router.get('/', estudiantesControllers.allEstudiantes)
 
-
 router.get('/:rut', estudiantesControllers.uniqueEstudiantes)
-router.post ('/', estudiantesControllers.createEstudiantes)
+router.post('/', estudiantesControllers.createEstudiantes)
 router.put('/', estudiantesControllers.updateEstudiantes)
 router.delete('/', estudiantesControllers.DeleteEstudiantes)
 

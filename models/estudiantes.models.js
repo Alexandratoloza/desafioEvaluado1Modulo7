@@ -15,7 +15,7 @@ return rows[0]
 
 const createEstudiantes = async ({ rut, nombre, curso, nivel }) => {
     const query = {
-        text: 'INSERT INTO STUDENTS VALUES ($1, $2, $3, $4) RETURNING *',
+        text: 'INSERT INTO ESTUDIANTES VALUES ($1, $2, $3, $4) RETURNING *',
         values: [rut, nombre, curso, nivel],
     }
     const { rows } = await pool.query(query)
@@ -23,16 +23,16 @@ const createEstudiantes = async ({ rut, nombre, curso, nivel }) => {
 }
 
  
-const updateEstudiantes = async (estudiantes) => {
+const updateEstudiantes = async (updateEstudiantes) => {
     
     const SQLupdate = "UPDATE ESTUDIANTES SET NOMBRE = 'ESTUDIANTE 1 MODIFICADO' WHERE RUT = '111';"
-    const { rows } = await pool.query(SQLupdate, [estudiantes.nombre, estudiantes.curso, estudiantes.nivel])
+    const { rows } = await pool.query(SQLupdate, [updateEstudiantes.nombre, updateEstudiantes.curso, updateEstudiantes.nivel])
     return rows
 }
 
 
 
-const deleteOnByRut = async (rut) => {
+const DeleteEstudiantes = async (rut) => {
 
     const text = 'DELETE FROM ESTUDIANTES WHERE RUT = $1'
     const {rows} = await pool.query(text, [rut])
@@ -41,6 +41,6 @@ return rows[0]
 }
 
 export const estudiantesModel =  {
-    findAll, findOneByRut, createEstudiantes, updateEstudiantes, deleteOnByRut, 
+    findAll, findOneByRut, createEstudiantes, updateEstudiantes, DeleteEstudiantes, 
 
 }

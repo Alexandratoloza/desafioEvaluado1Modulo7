@@ -1,5 +1,50 @@
 [
-    {
-        
-    }
+  {
+    "rut": "222",
+    "nombre": "ESTUDIANTE 2",
+    "curso": "JS",
+    "nivel": 2
+  },
+  {
+    "rut": "333",
+    "nombre": "ESTUDIANTE 3",
+    "curso": "JS",
+    "nivel": 3
+  },
+  {
+    "rut": "111",
+    "nombre": "ESTUDIANTE 1 MODIFICADO",
+    "curso": "JS",
+    "nivel": 1
+  },
+  {
+    "rut": "123",
+    "nombre": "Juan Pérez",
+    "curso": "Matemáticas",
+    "nivel": 1
+  },
+  {
+    "rut": "132",
+    "nombre": "María González",
+    "curso": "Historia",
+    "nivel": 2
+  },
+  {
+    "rut": "1523",
+    "nombre": "Josefa L",
+    "curso": "Matemáticas",
+    "nivel": 1
+  },
+  {
+    "rut": "4554",
+    "nombre": "Natalia J",
+    "curso": "Historia",
+    "nivel": 2
+  },
+  {
+    "rut": "555",
+    "nombre": "Pedro Roman",
+    "curso": "Ciencias",
+    "nivel": 3
+  }
 ]
