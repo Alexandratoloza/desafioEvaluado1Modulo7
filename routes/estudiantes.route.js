@@ -5,11 +5,11 @@ import { estudiantesControllers } from "../controllers/estudiantes.controllers.j
 
 router.get('/', estudiantesControllers.allEstudiantes)
 
-/// necesito un estudiante consulta base de datos
-router.get('/:rut', estudiantesControllers.uniqueEstudiantes)
 
-router.put('/:rut', estudiantesControllers.updateEstudiantes)
-router.delete('/:rut', estudiantesControllers.DeleteEstudiantes)
+router.get('/:rut', estudiantesControllers.uniqueEstudiantes)
+router.post ('/', estudiantesControllers.createEstudiantes)
+router.put('/', estudiantesControllers.updateEstudiantes)
+router.delete('/', estudiantesControllers.DeleteEstudiantes)
 
 
  export default router;

@@ -32,7 +32,7 @@ const uniqueEstudiantes = async (req, res) => {
 
 }
 
-const createEstudantes = async (req, res) => {
+const createEstudiantes = async (req, res) => {
 
   try {
 
@@ -85,7 +85,7 @@ const DeleteEstudiantes = async (req, res) => {
 export const estudiantesControllers = {
   allEstudiantes,
   uniqueEstudiantes,
-  createEstudantes,
+  createEstudiantes,
   updateEstudiantes,
   DeleteEstudiantes,
 }
