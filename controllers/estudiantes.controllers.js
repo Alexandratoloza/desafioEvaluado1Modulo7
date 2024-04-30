@@ -1,3 +1,4 @@
+import {handleError} from "../database/codeErrors.js"
 import { estudiantesModel } from "../models/estudiantes.models.js"
 
 const allEstudiantes =  async (req, res) => {
@@ -29,6 +30,27 @@ const uniqueEstudiantes = async (req, res) => {
 
   }}
 
+  const createEstudantes = async (req, res) => {
+
+      try{
+        
+          const { rut, nombre, curso, nivel } = req.body
+          
+          if (!rut || !rut.trim()) {
+              return res.status(400).json({ ok: false, msg: "Se necesita el campo rut" })
+          }
+          const nuevoEstudiante = { rut, nombre, curso, nivel }
+          const estudiantesDB = await estudiantesModel.create(nuevoEstudiante)
+          return res.status(201).json(estudiantesDB)
+
+
+      } catch (error){
+          console.log (error)
+          return res.json(500).json({ok: false})
+      }
+
+  }
+
   const updateEstudiantes = async (req, res) => {
     try {
         const { nombre, } = req.body
@@ -43,8 +65,6 @@ const uniqueEstudiantes = async (req, res) => {
 }
 
 
-
-  
 
   const DeleteEstudiantes = async (req, res) => {
   
@@ -62,8 +82,9 @@ const uniqueEstudiantes = async (req, res) => {
   
 export const estudiantesControllers  = {
     allEstudiantes, 
-    uniqueEstudiantes, 
+    uniqueEstudiantes,
+    createEstudantes, 
     updateEstudiantes,
-    DeleteEstudiantes
+    DeleteEstudiantes,
 }
 
